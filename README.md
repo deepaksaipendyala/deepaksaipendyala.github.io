@@ -1,7 +1,7 @@
 # Welcome to My GitHub Page
 
 # Deepak Sai Pendyala
-[![Alt text](https://drive.google.com/file/d/1OMhXvPtNTvvMDmcBsMKJHi0PcRgarBfm/view?usp=sharing)](https://drive.google.com)
+
 
 **I'm a student at Amrita Vishwa Vidyapeetham, Coimbatore studying electrical and computer engineering. I am a young, energetic, and enthusiastic student who takes onboard new skills and experiences quickly. I can work under pressure and without supervision and love teamwork, and I enjoy working with people to achieve a common goal. I'm a self-motivated and ambitious young man seeking an opportunity to grow and contribute to on-going technology || I'm specialized in Google IT Support professional at 17yrs old || I never stop! more on the way ||...............**
 
@@ -57,7 +57,7 @@ a disaster
 ● best practices for securing a network.
 ● how to help others to grasp security concepts and protect themselves.   
 
-# my projects --
+# My Projects --
 ## WiFi Jammer/WiFi deauther (Sep 2018)
 _This software allows you to easily perform a variety of actions to test 802.11 wireless networks by using an inexpensive ESP8266 WiFi SoC (System On A Chip)._
 
@@ -72,6 +72,8 @@ _This is only for educational purposes_
 
 # You can view my certtifications and works here
 [click here](https://drive.google.com/drive/folders/1h5iJLug_0MtCwBViOt4FAiJ4x68lQf12)
+
+
 
 
 **THANK YOU FOR YOUR VALUABLE TIME**
