@@ -62,11 +62,17 @@ a disaster
 ● how to help others to grasp security concepts and protect themselves.   
 
 # SKILLS 
+
 **Python - Intermediate**
+
 **C Programming - Intermediate**
+
 **Video Editing - Intermediate**
+
 **Photography - Intermediate**
+
 **Adobe Photoshop - Intermediate**
+
 **AutoCAD - Intermediate**
 
 # My Projects --
