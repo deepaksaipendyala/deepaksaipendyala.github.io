@@ -3,7 +3,11 @@
 # Deepak Sai Pendyala
 
 
-**I'm a student at Amrita Vishwa Vidyapeetham, Coimbatore studying electrical and computer engineering. I am a young, energetic, and enthusiastic student who takes onboard new skills and experiences quickly. I can work under pressure and without supervision and love teamwork, and I enjoy working with people to achieve a common goal. I'm a self-motivated and ambitious young man seeking an opportunity to grow and contribute to on-going technology || I'm specialized in Google IT Support professional at 17yrs old || I never stop! more on the way ||...............**
+**I'm a student at Amrita Vishwa Vidyapeetham, Coimbatore studying electrical and computer engineering. I am a young, energetic, and enthusiastic student who takes onboard new skills and experiences quickly. I can work under pressure and without supervision and love teamwork, and I enjoy working with people to achieve a common goal. I'm a self-motivated and ambitious young man seeking an opportunity to grow and contribute to on-going technology  
+
+**I'm specialized in Google IT Support professional at 17yrs old **
+
+**I never stop! more on the way...............**
 
 _Linkedin profile _
 [click here](https://www.linkedin.com/in/deepak-sai-pendyala-545586178/)
