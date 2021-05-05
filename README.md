@@ -5,7 +5,7 @@
 
 **I'm a student at Amrita Vishwa Vidyapeetham, Coimbatore studying electrical and computer engineering. I am a young, energetic, and enthusiastic student who takes onboard new skills and experiences quickly. I can work under pressure and without supervision and love teamwork, and I enjoy working with people to achieve a common goal. I'm a self-motivated and ambitious young man seeking an opportunity to grow and contribute to on-going technology**  
 
-**I'm specialized in Google IT Support professional at 17yrs old**
+**I'm specialized in Google IT Support professional at 17yrs old and interested in DSA, ML & AI**
 
 **I never stop! more on the way...............**
 
@@ -61,6 +61,14 @@ a disaster
 ● best practices for securing a network.
 ● how to help others to grasp security concepts and protect themselves.   
 
+# SKILLS 
+**Python - Intermediate
+C Programming - Intermediate
+Video Editing - Intermediate
+Photography - Intermediate
+Adobe Photoshop - Intermediate
+AutoCAD - Intermediate**
+
 # My Projects --
 ## WiFi Jammer/WiFi deauther (Sep 2018)
 _This software allows you to easily perform a variety of actions to test 802.11 wireless networks by using an inexpensive ESP8266 WiFi SoC (System On A Chip)._
@@ -80,7 +88,7 @@ _This is only for educational purposes_
 
 
 
-**THANK YOU FOR YOUR VALUABLE TIME**
+**THANKS FOR YOUR VALUABLE TIME**
 
 -SIGNING OFF- 
 # DEEPAK SAI PENDYALA
