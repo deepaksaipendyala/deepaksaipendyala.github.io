@@ -1,0 +1,579 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Deepak Pendyala"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-03 02:08:20 PM"/>
+        <attribute name="created" value="RGVlcGFrIFBlbmR5YWxhO0RFRVBBS1NQUkVEQVRPUjsyMDIxLTAxLTA1OzEwOjM2OjQyIEFNOzM4MDY="/>
+        <attribute name="edited" value="RGVlcGFrIFBlbmR5YWxhO0RFRVBBS1NQUkVEQVRPUjsyMDIxLTAyLTAyOzExOjQ2OjQ4IEFNOzM7RGVlcGFrIFBlbmR5YWxhO0RFRVBBS1NQUkVEQVRPUjsyMDIxLTAxLTA1OzEwOjM2OjQyIEFNO3BlcmMuZnByZzs4NzQ5"/>
+        <attribute name="edited" value="RGVlcGFrIFBlbmR5YWxhO0RFRVBBS1NQUkVEQVRPUjsyMDIxLTAyLTAyOzExOjUzOjU5IEFNOzM7RGVlcGFrIFBlbmR5YWxhO0RFRVBBS1NQUkVEQVRPUjsyMDIxLTAxLTA1OzEwOjM2OjQyIEFNOzEyMzQgKDMpLmZwcmc7ODY4OQ=="/>
+        <attribute name="edited" value="RGVlcGFrIFBlbmR5YWxhO0RFRVBBS1NQUkVEQVRPUjsyMDIxLTAyLTAyOzExOjU1OjA2IEFNOzE7SFA7REVTS1RPUC0xSTZJVExBOzIwMjEtMDItMDE7MDM6NDk6MDQgUE07Y2hhbmR1IHdhc3RlLmZwcmc7ODE5Nw=="/>
+        <attribute name="edited" value="RGVlcGFrIFBlbmR5YWxhO0RFRVBBS1NQUkVEQVRPUjsyMDIxLTAyLTAyOzAyOjU0OjA5IFBNOzE7RGVlcGFrIFBlbmR5YWxhO0RFRVBBS1NQUkVEQVRPUjsyMDIxLTAxLTA1OzEwOjM2OjQyIEFNOzEyMzQgKDUpLmZwcmc7ODcwMA=="/>
+        <attribute name="edited" value="RGVlcGFrIFBlbmR5YWxhO0RFRVBBS1NQUkVEQVRPUjsyMDIxLTAyLTAzOzAyOjA4OjIwIFBNOzIwOzM5NzM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="option, choice" type="Integer" array="False" size=""/>
+            <output expression="&quot;Namaskar..! Welcome to Waste Management Calculator   &quot;&amp;&quot;&#13;&#10;                     &quot;&amp;&#13;&#10;&quot; if you are consumer, please type 1 &quot;&amp;&quot;&#13;&#10;                           &quot;&amp;&#13;&#10;&quot; if you are from Municipal Authority, please press 2&quot;" newline="False"/>
+            <input variable="option"/>
+            <if expression="option=1">
+                <then>
+                    <call expression="customer"/>
+                </then>
+                <else>
+                    <output expression="&quot;Welcome back to Municipal Waste management calculator&quot;" newline="True"/>
+                    <declare name="h, d, area" type="Integer" array="False" size=""/>
+                    <output expression="&quot;Please enter no of areas in the municipality&quot;" newline="True"/>
+                    <input variable="area"/>
+                    <output expression="&quot;Please enter no of houses in the area&quot;" newline="True"/>
+                    <input variable="h"/>
+                    <output expression="&quot;Please enter the no of days to be calculated&quot;" newline="True"/>
+                    <input variable="d"/>
+                    <output expression="&quot;If you want to computes the statistics of the waste collection per area, Please enter 1 &quot;&amp;&#13;&#10;&quot; &#13;&#10;If you want to reward the house which gives less quantity of waste, please enter 2&quot;&amp;&#13;&#10;&quot; &#13;&#10;   If you want to Compute the total earning for the municipality, please enter 3&quot;&amp;&#13;&#10;&quot;    &#13;&#10;If you want to know what percentage of the waste is from what category, please enter 4&quot;" newline="True"/>
+                    <input variable="choice"/>
+                    <if expression="choice=1">
+                        <then>
+                            <call expression="avgwaste(area,h,d)"/>
+                        </then>
+                        <else>
+                            <if expression="choice=2">
+                                <then>
+                                    <call expression="lowwaste(area,h,d)"/>
+                                </then>
+                                <else>
+                                    <if expression="choice=3">
+                                        <then>
+                                            <call expression="totalearning(area,h,d)"/>
+                                        </then>
+                                        <else>
+                                            <if expression="choice=4">
+                                                <then>
+                                                    <call expression="percentage(area,h,d)"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;wrong input, sorry&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="avgwaste" type="None" variable="">
+        <parameters>
+            <parameter name="area" type="Integer" array="False"/>
+            <parameter name="h" type="Integer" array="False"/>
+            <parameter name="d" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i, total, g, x, f, avg" type="Real" array="False" size=""/>
+            <assign variable="x" expression="h"/>
+            <declare name="degrad, plastic, elec" type="Real" array="True" size="d*h"/>
+            <declare name="a, b, c, k, j" type="Real" array="False" size=""/>
+            <assign variable="k" expression="0"/>
+            <assign variable="i" expression="0"/>
+            <declare name="final" type="Real" array="False" size=""/>
+            <assign variable="final" expression="0"/>
+            <for variable="f" start="0" end="area-1" direction="inc" step="1">
+                <output expression="&quot;ENTER THE DETAILS IN AREA &quot; &amp; f+1" newline="True"/>
+                <for variable="g" start="0" end="d-1" direction="inc" step="3">
+                    <output expression="&quot;enter the quantity of degradable waste in kg&quot; &amp; &quot; on day &quot; &amp; g+1" newline="True"/>
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <output expression="&quot;Enter quantity in house &quot; &amp; j+1" newline="True"/>
+                        <input variable="degrad[i]"/>
+                        <assign variable="j" expression="j+1"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="k" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <for variable="g" start="1" end="d-1" direction="inc" step="3">
+                    <output expression="&quot;enter the quantity of plastic waste in kg&quot; &amp; &quot; on day &quot; &amp; g+1" newline="True"/>
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <output expression="&quot;Enter quantity in house &quot; &amp; j+1" newline="True"/>
+                        <input variable="plastic[i]"/>
+                        <assign variable="j" expression="j+1"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="k" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <for variable="g" start="2" end="d-1" direction="inc" step="3">
+                    <output expression="&quot;enter the quantity of electronic waste in kg&quot; &amp; &quot; on day &quot; &amp; g+1" newline="True"/>
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <output expression="&quot;Enter quantity in house &quot; &amp; j+1" newline="True"/>
+                        <input variable="elec[i]"/>
+                        <assign variable="j" expression="j+1"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <comment text="charges : 1kg degredable waste - 5&#13;&#10;1kg plastic waste - 10&#13;&#10;1kg electronic waste - 15"/>
+                <declare name="tdeg, tplas, telec" type="Real" array="False" size=""/>
+                <assign variable="tdeg" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <assign variable="k" expression="0"/>
+                <for variable="g" start="0" end="d-1" direction="inc" step="3">
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <assign variable="a" expression="0"/>
+                        <assign variable="a" expression="degrad[i]"/>
+                        <assign variable="tdeg" expression="tdeg+a"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="tplas" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <assign variable="k" expression="0"/>
+                <for variable="g" start="1" end="d-1" direction="inc" step="3">
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <assign variable="b" expression="0"/>
+                        <assign variable="b" expression="plastic[i]"/>
+                        <assign variable="tplas" expression="tplas+b"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="telec" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <assign variable="k" expression="0"/>
+                <for variable="g" start="2" end="d-1" direction="inc" step="3">
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <assign variable="c" expression="0"/>
+                        <assign variable="c" expression="elec[i]"/>
+                        <assign variable="telec" expression="telec+c"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="avg" expression="0"/>
+                <assign variable="total" expression="tdeg+tplas+telec"/>
+                <assign variable="avg" expression="total/3"/>
+                <output expression="&quot;Average waste in all Categories of waste in Municipality for &quot; &amp; x &amp; &quot; days in &quot;  &amp; &quot; Area &quot; &amp; f+1 &amp; &quot; is &quot; &amp;  avg" newline="True"/>
+                <assign variable="final" expression="final+avg"/>
+                <assign variable="k" expression="0"/>
+                <assign variable="i" expression="0"/>
+                <assign variable="h" expression="x"/>
+            </for>
+            <output expression="&quot;So Finally, Average waste in all Categories of waste in Municipality for &quot; &amp; x &amp; &quot; days in &quot; &amp; area &amp; &quot; Area/Areas is &quot;&amp;  final" newline="True"/>
+        </body>
+    </function>
+    <function name="customer" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, sum, weight, type, days" type="Integer" array="False" size=""/>
+            <output expression="&quot;WASTE MANAGEMENT CALCULATOR&quot;" newline="True"/>
+            <output expression="&quot;Please enter the no of days to calculate:&quot;" newline="True"/>
+            <input variable="days"/>
+            <declare name="money" type="Integer" array="True" size="days"/>
+            <assign variable="sum" expression="0"/>
+            <assign variable="i" expression="0"/>
+            <while expression="i&lt;days">
+                <output expression="&quot;Please enter the type of waste of day &quot;&amp;(i+1)&amp;&quot; :&#13;&#10; for degradable wastes press 1&#13;&#10; for plastic wastes press 2&#13;&#10;and for electronic wastes press 3 &quot;" newline="True"/>
+                <input variable="type"/>
+                <if expression="(type&lt;4 &amp;&amp; type&gt;0)">
+                    <then>
+                        <output expression="&quot;Please enter the weight dumped:&quot;" newline="True"/>
+                        <input variable="weight"/>
+                        <assign variable="money[i]" expression="weight*type*5"/>
+                        <output expression="&quot;Today's expenditure on waste management is RS &quot;&amp;money[i]" newline="True"/>
+                        <assign variable="sum" expression="sum+money[i]"/>
+                        <assign variable="i" expression="i+1"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Enter a valid input in range 1 to 3&quot;" newline="True"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;The monthly expenditure on waste management is &quot;&amp;sum" newline="True"/>
+        </body>
+    </function>
+    <function name="lowwaste" type="None" variable="">
+        <parameters>
+            <parameter name="area" type="Integer" array="False"/>
+            <parameter name="h" type="Integer" array="False"/>
+            <parameter name="d" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i, total, g, x, f" type="Real" array="False" size=""/>
+            <assign variable="x" expression="h"/>
+            <declare name="degrad, plastic, elec" type="Real" array="True" size="d*h"/>
+            <declare name="a, b, c, k, j, p" type="Real" array="False" size=""/>
+            <declare name="degraddube, plasticdube, elecdube" type="Real" array="True" size="d*h"/>
+            <assign variable="k" expression="0"/>
+            <assign variable="i" expression="0"/>
+            <declare name="final" type="Real" array="False" size=""/>
+            <assign variable="final" expression="0"/>
+            <for variable="f" start="0" end="area-1" direction="inc" step="1">
+                <output expression="&quot;ENTER THE DETAILS IN AREA &quot; &amp; f+1" newline="True"/>
+                <for variable="g" start="0" end="d-1" direction="inc" step="3">
+                    <output expression="&quot;enter the quantity of degradable waste in kg&quot; &amp; &quot; on day &quot; &amp; g+1" newline="True"/>
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <output expression="&quot;Enter quantity in house &quot; &amp; j+1" newline="True"/>
+                        <input variable="degrad[i]"/>
+                        <assign variable="j" expression="j+1"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="k" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <if expression="d&gt;3">
+                    <then>
+                        <for variable="i" start="0" end="h-1" direction="inc" step="1">
+                            <assign variable="degrad[i]" expression="degrad[i]+degrad[i+h]"/>
+                        </for>
+                    </then>
+                    <else/>
+                </if>
+                <for variable="i" start="0" end="h-1" direction="inc" step="1">
+                    <assign variable="degraddube[i]" expression="degrad[i]"/>
+                </for>
+                <for variable="i" start="0" end="h-1" direction="inc" step="1">
+                    <for variable="p" start="0" end="h-2" direction="inc" step="1">
+                        <if expression="degrad[p]&gt;degrad[p+1]">
+                            <then>
+                                <assign variable="a" expression="degrad[p]"/>
+                                <assign variable="degrad[p]" expression="degrad[p+1]"/>
+                                <assign variable="degrad[p+1]" expression="a"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </for>
+                </for>
+                <for variable="i" start="0" end="h-1" direction="inc" step="1">
+                    <if expression="degrad[0]=degraddube[i]">
+                        <then>
+                            <output expression="&quot;The house which gives low quantity of degradable waste is rewarded with badminton kit i.e &quot; &amp; degrad[0] &amp; &quot;kgs&quot;&amp; &quot; in house no. &quot;&amp;i+1" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+                <for variable="g" start="1" end="d-1" direction="inc" step="3">
+                    <output expression="&quot;enter the quantity of plastic waste in kg&quot; &amp; &quot; on day &quot; &amp; g+1" newline="True"/>
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <output expression="&quot;Enter quantity in house &quot; &amp; j+1" newline="True"/>
+                        <input variable="plastic[i]"/>
+                        <assign variable="j" expression="j+1"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="k" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <if expression="d&gt;4">
+                    <then>
+                        <for variable="i" start="0" end="h-1" direction="inc" step="1">
+                            <assign variable="plastic[i]" expression="plastic[i]+plastic[i+h]"/>
+                        </for>
+                    </then>
+                    <else/>
+                </if>
+                <for variable="i" start="0" end="h-1" direction="inc" step="1">
+                    <assign variable="plasticdube[i]" expression="plastic[i]"/>
+                </for>
+                <for variable="i" start="0" end="h-1" direction="inc" step="1">
+                    <for variable="p" start="0" end="h-2" direction="inc" step="1">
+                        <if expression="plastic[p]&gt;plastic[p+1]">
+                            <then>
+                                <assign variable="a" expression="plastic[p]"/>
+                                <assign variable="plastic[p]" expression="plastic[p+1]"/>
+                                <assign variable="plastic[p+1]" expression="a"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </for>
+                </for>
+                <for variable="i" start="0" end="h-1" direction="inc" step="1">
+                    <if expression="plastic[0]=plasticdube[i]">
+                        <then>
+                            <output expression="&quot;The house which gives low quantity of plastic waste is rewarded with cricket kit i.e &quot; &amp; plastic[0] &amp; &quot;kgs&quot;&amp; &quot; in house no. &quot;&amp;i+1" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+                <for variable="g" start="2" end="d-1" direction="inc" step="3">
+                    <output expression="&quot;enter the quantity of electronic waste in kg&quot; &amp; &quot; on day &quot; &amp; g+1" newline="True"/>
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <output expression="&quot;Enter quantity in house &quot; &amp; j+1" newline="True"/>
+                        <input variable="elec[i]"/>
+                        <assign variable="j" expression="j+1"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="k" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <if expression="d&gt;5">
+                    <then>
+                        <for variable="i" start="0" end="h-1" direction="inc" step="1">
+                            <assign variable="elec[i]" expression="elec[i]+elec[i+h]"/>
+                        </for>
+                    </then>
+                    <else/>
+                </if>
+                <for variable="i" start="0" end="h-1" direction="inc" step="1">
+                    <assign variable="elecdube[i]" expression="elec[i]"/>
+                </for>
+                <for variable="i" start="0" end="h-1" direction="inc" step="1">
+                    <for variable="p" start="0" end="h-2" direction="inc" step="1">
+                        <if expression="elec[p]&gt;elec[p+1]">
+                            <then>
+                                <assign variable="a" expression="elec[p]"/>
+                                <assign variable="elec[p]" expression="elec[p+1]"/>
+                                <assign variable="elec[p+1]" expression="a"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </for>
+                </for>
+                <for variable="i" start="0" end="h-1" direction="inc" step="1">
+                    <if expression="elec[0]=elecdube[i]">
+                        <then>
+                            <output expression="&quot;The house which gives low quantity of electronic waste is rewarded with football kit i.e &quot; &amp; elec[0] &amp; &quot;kgs&quot;&amp; &quot; in house no. &quot;&amp;i+1" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+            </for>
+        </body>
+    </function>
+    <function name="percentage" type="None" variable="">
+        <parameters>
+            <parameter name="area" type="Integer" array="False"/>
+            <parameter name="h" type="Integer" array="False"/>
+            <parameter name="d" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i, total, g, x, f, t" type="Real" array="False" size=""/>
+            <assign variable="x" expression="h"/>
+            <declare name="degrad, plastic, elec" type="Real" array="True" size="d*h"/>
+            <declare name="a, b, c, k, j" type="Real" array="False" size=""/>
+            <assign variable="k" expression="0"/>
+            <assign variable="i" expression="0"/>
+            <declare name="final" type="Real" array="False" size=""/>
+            <assign variable="final" expression="0"/>
+            <declare name="final1, final2, final3" type="Real" array="False" size=""/>
+            <assign variable="total" expression="0"/>
+            <assign variable="final1" expression="0"/>
+            <assign variable="final2" expression="0"/>
+            <assign variable="final3" expression="0"/>
+            <for variable="f" start="0" end="area-1" direction="inc" step="1">
+                <output expression="&quot;ENTER THE DETAILS IN AREA &quot; &amp; f+1" newline="True"/>
+                <for variable="g" start="0" end="d-1" direction="inc" step="3">
+                    <output expression="&quot;enter the quantity of degradable waste in kg&quot; &amp; &quot; on day &quot; &amp; g+1" newline="True"/>
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <output expression="&quot;Enter quantity in house &quot; &amp; j+1" newline="True"/>
+                        <input variable="degrad[i]"/>
+                        <assign variable="j" expression="j+1"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="k" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <for variable="g" start="1" end="d-1" direction="inc" step="3">
+                    <output expression="&quot;enter the quantity of plastic waste in kg&quot; &amp; &quot; on day &quot; &amp; g+1" newline="True"/>
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <output expression="&quot;Enter quantity in house &quot; &amp; j+1" newline="True"/>
+                        <input variable="plastic[i]"/>
+                        <assign variable="j" expression="j+1"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="k" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <for variable="g" start="2" end="d-1" direction="inc" step="3">
+                    <output expression="&quot;enter the quantity of electronic waste in kg&quot; &amp; &quot; on day &quot; &amp; g+1" newline="True"/>
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <output expression="&quot;Enter quantity in house &quot; &amp; j+1" newline="True"/>
+                        <input variable="elec[i]"/>
+                        <assign variable="j" expression="j+1"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <comment text="charges : 1kg degredable waste - 5&#13;&#10;1kg plastic waste - 10&#13;&#10;1kg electronic waste - 15"/>
+                <declare name="tdeg, tplas, telec" type="Real" array="False" size=""/>
+                <assign variable="tdeg" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <assign variable="k" expression="0"/>
+                <for variable="g" start="0" end="d-1" direction="inc" step="3">
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <assign variable="a" expression="0"/>
+                        <assign variable="a" expression="degrad[i]"/>
+                        <assign variable="tdeg" expression="tdeg+a"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="tplas" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <assign variable="k" expression="0"/>
+                <for variable="g" start="1" end="d-1" direction="inc" step="3">
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <assign variable="b" expression="0"/>
+                        <assign variable="b" expression="plastic[i]"/>
+                        <assign variable="tplas" expression="tplas+b"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="telec" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <assign variable="k" expression="0"/>
+                <for variable="g" start="2" end="d-1" direction="inc" step="3">
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <assign variable="c" expression="0"/>
+                        <assign variable="c" expression="elec[i]"/>
+                        <assign variable="telec" expression="telec+c"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="t" expression="tdeg+tplas+telec"/>
+                <assign variable="total" expression="total+t"/>
+                <assign variable="final1" expression="final1+tdeg"/>
+                <assign variable="final2" expression="final2+tplas"/>
+                <assign variable="final3" expression="final3+telec"/>
+                <assign variable="k" expression="0"/>
+                <assign variable="i" expression="0"/>
+                <assign variable="h" expression="x"/>
+            </for>
+            <assign variable="final1" expression="(final1/total)*100"/>
+            <assign variable="final2" expression="(final2/total)*100"/>
+            <assign variable="final3" expression="(final3/total)*100"/>
+            <output expression="&quot;total wastage is &quot;&amp;total &amp; &quot; KGS&quot;" newline="True"/>
+            <output expression="ToFixed(final1,2)&amp;&quot;%&quot;&amp;&quot; is from degradedable waste category&quot;" newline="True"/>
+            <output expression="ToFixed(final2,2)&amp;&quot;%&quot;&amp;&quot; is from plastic waste category&quot;" newline="True"/>
+            <output expression="ToFixed(final3,2)&amp;&quot;%&quot;&amp;&quot; is from electronic waste category&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="totalearning" type="None" variable="">
+        <parameters>
+            <parameter name="area" type="Integer" array="False"/>
+            <parameter name="h" type="Integer" array="False"/>
+            <parameter name="d" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i, total, g, f, x" type="Integer" array="False" size=""/>
+            <assign variable="x" expression="h"/>
+            <declare name="degrad, plastic, elec" type="Real" array="True" size="d*h"/>
+            <declare name="a, b, c, k, j" type="Real" array="False" size=""/>
+            <assign variable="k" expression="0"/>
+            <assign variable="i" expression="0"/>
+            <declare name="final" type="Real" array="False" size=""/>
+            <assign variable="final" expression="0"/>
+            <for variable="f" start="0" end="area-1" direction="inc" step="1">
+                <output expression="&quot;ENTER THE DETAILS IN AREA &quot; &amp; f+1" newline="True"/>
+                <for variable="g" start="0" end="d-1" direction="inc" step="3">
+                    <output expression="&quot;enter the quantity of degradable waste in kg&quot; &amp; &quot; on day &quot; &amp; g+1" newline="True"/>
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <output expression="&quot;Enter quantity in house &quot; &amp; j+1" newline="True"/>
+                        <input variable="degrad[i]"/>
+                        <assign variable="j" expression="j+1"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="k" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <for variable="g" start="1" end="d-1" direction="inc" step="3">
+                    <output expression="&quot;enter the quantity of plastic waste in kg&quot; &amp; &quot; on day &quot; &amp; g+1" newline="True"/>
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <output expression="&quot;Enter quantity in house &quot; &amp; j+1" newline="True"/>
+                        <input variable="plastic[i]"/>
+                        <assign variable="j" expression="j+1"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="k" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <for variable="g" start="2" end="d-1" direction="inc" step="3">
+                    <output expression="&quot;enter the quantity of electronic waste in kg&quot; &amp; &quot; on day &quot; &amp; g+1" newline="True"/>
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <output expression="&quot;Enter quantity in house &quot; &amp; j+1" newline="True"/>
+                        <input variable="elec[i]"/>
+                        <assign variable="j" expression="j+1"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <comment text="charges : 1kg degredable waste - 5&#13;&#10;1kg plastic waste - 10&#13;&#10;1kg electronic waste - 15"/>
+                <declare name="tdeg, tplas, telec" type="Real" array="False" size=""/>
+                <assign variable="tdeg" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <assign variable="k" expression="0"/>
+                <for variable="g" start="0" end="d-1" direction="inc" step="3">
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <assign variable="a" expression="0"/>
+                        <assign variable="a" expression="degrad[i]"/>
+                        <assign variable="a" expression="a*5"/>
+                        <assign variable="tdeg" expression="tdeg+a"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="tplas" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <assign variable="k" expression="0"/>
+                <for variable="g" start="1" end="d-1" direction="inc" step="3">
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <assign variable="b" expression="0"/>
+                        <assign variable="b" expression="plastic[i]"/>
+                        <assign variable="b" expression="b*10"/>
+                        <assign variable="tplas" expression="tplas+b"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="telec" expression="0"/>
+                <assign variable="h" expression="x"/>
+                <assign variable="k" expression="0"/>
+                <for variable="g" start="2" end="d-1" direction="inc" step="3">
+                    <assign variable="j" expression="0"/>
+                    <for variable="i" start="k" end="h-1" direction="inc" step="1">
+                        <assign variable="c" expression="0"/>
+                        <assign variable="c" expression="elec[i]"/>
+                        <assign variable="c" expression="c*15"/>
+                        <assign variable="telec" expression="telec+c"/>
+                    </for>
+                    <assign variable="k" expression="k+h"/>
+                    <assign variable="h" expression="h+h"/>
+                </for>
+                <assign variable="total" expression="tdeg+tplas+telec"/>
+                <assign variable="final" expression="final+total"/>
+                <assign variable="k" expression="0"/>
+                <assign variable="i" expression="0"/>
+                <assign variable="h" expression="x"/>
+            </for>
+            <output expression="&quot;So Finally, Total Earnings of the Municipality for &quot; &amp; x &amp; &quot; days in &quot; &amp; area &amp; &quot; Area/Areas is &quot;&amp;  final &amp; &quot; rupees&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
