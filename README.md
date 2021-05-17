@@ -88,6 +88,15 @@ While most client devices seem to support it when the access point forces it, ba
 _This is only for educational purposes_
 [click here](https://www.youtube.com/watch?v=7O1EI_gDVQQ&ab_channel=DeepakPendyala)
 
+## my semester 1 project :
+Designing an Algorithm and implement it using  Flowgorithm for the following
+1. Municipality computes the statistics of the waste collection per area. Statistics
+includes average wastes collected in all categories of wastes.
+2. Municipality has decided to reward the house which gives less quantity of
+Waste.
+3. Municipality decided to collect a processing fees (you can decide the amount based on the quantity and category of the waste) for waste collection per house. Compute the total earning for the municipality per month in this regard.
+
+
 # You can view my certtifications and works here
 [click here](https://drive.google.com/drive/folders/1h5iJLug_0MtCwBViOt4FAiJ4x68lQf12)
 
