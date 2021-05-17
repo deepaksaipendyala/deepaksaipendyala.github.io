@@ -112,8 +112,14 @@ I'm doing [Complete Python Developer in 2021: Zero to Mastery created by Andrei 
 - Email and SMS with Python
 - Working with APIs (Twitter Bot, Password Checker, Translator)
 
+
+
+
 # You can view my certtifications and works here
 [click here](https://drive.google.com/drive/folders/1h5iJLug_0MtCwBViOt4FAiJ4x68lQf12)
+
+
+
 
 
 
