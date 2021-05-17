@@ -99,7 +99,7 @@ Waste.
 Mycode: [fprg link](https://github.com/deepaksaipendyala/deepaksaipendyala.github.io/blob/main/G10%20PROJECT%20REVIEW%202%20.fprg)
 
 ## Presently,
-I'm doing Complete Python Developer in 2021: Zero to Mastery created by Andrei Neagoie(https://www.udemy.com/course/complete-python-developer-zero-to-mastery/) involving projects of 
+I'm doing Complete Python Developer in 2021: Zero to Mastery created by [Andrei Neagoie](https://www.udemy.com/course/complete-python-developer-zero-to-mastery) involving projects of 
 - File Processing: Image, CSV, PDFs, Text + more
 - Web Development with Python
 - Machine Learning with Python
