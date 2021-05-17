@@ -9,8 +9,7 @@
 
 **I never stop! more on the way...............**
 
-_Linkedin profile _
-[click here](https://www.linkedin.com/in/deepak-sai-pendyala-545586178/)
+[Linkedin profile](https://www.linkedin.com/in/deepak-sai-pendyala-545586178/)
 
 # Specialization courses --
 ## Google IT Support Professional
