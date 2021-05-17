@@ -96,6 +96,7 @@ includes average wastes collected in all categories of wastes.
 Waste.
 3. Municipality decided to collect a processing fees (you can decide the amount based on the quantity and category of the waste) for waste collection per house. Compute the total earning for the municipality per month in this regard.
 
+Mycode: [fprg link](https://github.com/deepaksaipendyala/deepaksaipendyala.github.io/blob/main/G10%20PROJECT%20REVIEW%202%20.fprg)
 
 # You can view my certtifications and works here
 [click here](https://drive.google.com/drive/folders/1h5iJLug_0MtCwBViOt4FAiJ4x68lQf12)
