@@ -85,7 +85,7 @@ To effectively prevent a deauthentication attack, both client and access point m
 While most client devices seem to support it when the access point forces it, basically no WiFi access point has it enabled.
 
 _This is only for educational purposes_
-[click here](https://www.youtube.com/watch?v=7O1EI_gDVQQ&ab_channel=DeepakPendyala)
+[Youtube link](https://www.youtube.com/watch?v=7O1EI_gDVQQ&ab_channel=DeepakPendyala)
 
 ## My Semester 1 Project :
 Designing an Algorithm and implement it using  Flowgorithm for the following
@@ -116,7 +116,7 @@ I'm doing [Complete Python Developer in 2021: Zero to Mastery created by Andrei 
 
 
 # You can view my certtifications and works here
-[click here](https://drive.google.com/drive/folders/1h5iJLug_0MtCwBViOt4FAiJ4x68lQf12)
+[Drive Folder](https://drive.google.com/drive/folders/1h5iJLug_0MtCwBViOt4FAiJ4x68lQf12)
 
 
 
