@@ -1,6 +1,6 @@
 # Deepak Sai Pendyala
 
-**CS Grad at NCSU | Applied Scientist Intern @Amazon | Data Science & ML Enthusiast**
+## CS Grad at NCSU | Applied Scientist Intern @Amazon | Data Science & ML Enthusiast
 
 - **Location:** Raleigh, NC
 - **Email:** [deepaksaipendyala@gmail.com](mailto:deepaksaipendyala@gmail.com)
